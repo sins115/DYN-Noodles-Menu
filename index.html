@@ -8,7 +8,20 @@
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink)}
 header{background:var(--paper);text-align:center;padding:36px 16px 20px;border-bottom:1px solid var(--line)} header h1{font-size:4rem;line-height:.8;margin:0;color:#d84a16;font-weight:950;letter-spacing:-3px}.sub{font-weight:800;color:var(--ink);letter-spacing:4px;margin-top:13px;font-size:.95rem}
 nav{position:sticky;top:0;z-index:5;background:#f7f1e8eF;backdrop-filter:blur(10px);display:flex;justify-content:center;gap:4px;overflow:auto;padding:11px 12px;border-bottom:1px solid var(--line)}nav a{white-space:nowrap;text-decoration:none;color:var(--ink);font-weight:700;padding:8px 12px;font-size:.86rem}
-section{max-width:1150px;margin:auto;padding:42px 20px 8px}h2.section-title{text-align:center;text-transform:uppercase;letter-spacing:2px;font-size:1.35rem;margin:0 0 25px;color:#b94318}.section-title:after{content:"";display:block;width:46px;height:2px;background:var(--orange);margin:10px auto 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:#f7f1e8;border:1px solid var(--line);padding:12px 12px 14px;display:flex;flex-direction:column;min-width:0}.photo{height:230px;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.name{text-align:center;font-size:1rem;font-weight:800;margin:10px 0 5px;color:var(--ink)}.price{text-align:center;font-weight:700;color:#c04b1a}.soon{color:#888;font-size:.85rem}footer{text-align:center;padding:45px 10px;color:#856f65;font-size:.8rem}
+section{max-width:1150px;margin:auto;padding:42px 20px 8px}h2.section-title{text-align:center;text-transform:uppercase;letter-spacing:2px;font-size:1.35rem;margin:0 0 25px;color:#b94318}.section-title:after{content:"";display:block;width:46px;height:2px;background:var(--orange);margin:10px auto 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:#f7f1e8;border:1px solid var(--line);padding:12px 12px 14px;display:flex;flex-direction:column;min-width:0}.photo{height:230px;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.name{text-align:center;font-size:1rem;font-weight:800;margin:10px 0 5px;color:var(--ink)}.price{text-align:center;font-weight:700;color:#c04b1a}.soon{color:#888;font-size:.85rem}
+.card{cursor:zoom-in;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 22px #4b20141a}
+.card:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.photo-viewer{position:fixed;inset:0;z-index:20;background:rgba(28,16,11,.88);display:none;align-items:center;justify-content:center;padding:20px}
+.photo-viewer.open{display:flex}
+.photo-viewer__panel{position:relative;width:min(920px,100%);max-height:92vh;background:#f7f1e8;border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.photo-viewer__image{display:block;max-width:100%;max-height:76vh;object-fit:contain}
+.photo-viewer__caption{text-align:center;font-weight:800;color:var(--ink)}
+.photo-viewer__price{font-weight:700;color:#c04b1a}
+.photo-viewer__close{position:absolute;right:8px;top:8px;border:0;background:#f7f1e8;color:var(--ink);font-size:1.8rem;line-height:1;cursor:pointer;width:40px;height:40px;border-radius:50%}
+.photo-viewer__close:focus-visible{outline:3px solid var(--orange)}
+@media(max-width:720px){.photo-viewer{padding:10px}.photo-viewer__panel{padding:12px}.photo-viewer__image{max-height:72vh}}
+footer{text-align:center;padding:45px 10px;color:#856f65;font-size:.8rem}
 @media(max-width:720px){header{padding-top:28px}header h1{font-size:3.2rem}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card{padding:8px}.photo{height:160px}.name{font-size:.86rem;margin-top:7px}.price{font-size:.84rem}section{padding:30px 10px 4px}nav{justify-content:flex-start}}
 </style></head>
 <body>
@@ -50,9 +63,9 @@ section{max-width:1150px;margin:auto;padding:42px 20px 8px}h2.section-title{text
 <article class="card"><div class="photo"><img src="chicken fried rice-100kb.jpg" alt="Chicken Fried Rice"></div><div class="name">Chicken Fried Rice</div><div class="price">12,000 IQD</div></article>
 <article class="card"><div class="photo"><img src="beef fried rice.jpg" alt="Beef Fried Rice"></div><div class="name">Beef Fried Rice</div><div class="price">14,000 IQD</div></article>
 <article class="card"><div class="photo"><img src="veggie noodles-100kb.jpg" alt="Veggie Noodles"></div><div class="name">Veggie Noodles</div><div class="price">10,000 IQD</div></article>
-<article class="card"><div class="photo"><img src="chicken noodles-100kb.jpg" alt="Chicken Noodles"></div><div class="name">Chicken Noodles</div><div class="price">12,000 IQD</div></article>
-<article class="card"><div class="photo"><img src="katsu.jpeg" alt="Katsu Chicken Noodles"></div><div class="name">Katsu Chicken Noodles</div><div class="price">13,000 IQD</div></article>
-<article class="card"><div class="photo"><img src="beef noodles.jpg" alt="Beef Noodles"></div><div class="name">Beef Noodles</div><div class="price">14,000 IQD</div></article>
+<article class="card"><div class="photo"><img src="chicken nodlessss.jpeg" alt="Chicken Noodles"></div><div class="name">Chicken Noodles</div><div class="price">12,000 IQD</div></article>
+<article class="card"><div class="photo"><img src="chicken katsuuu.jpeg" alt="Katsu Chicken Noodles"></div><div class="name">Katsu Chicken Noodles</div><div class="price">13,000 IQD</div></article>
+<article class="card"><div class="photo"><img src="beef noodlessss.jpeg" alt="Beef Ramen"></div><div class="name">Beef Ramen</div><div class="price">14,000 IQD</div></article>
 <article class="card"><div class="photo"><img src="beef sizzling-200kb.jpg" alt="Beef Sizzling"></div><div class="name">Beef Sizzling</div><div class="price">15,000 IQD</div></article>
 <article class="card"><div class="photo"><img src="chicken sizzling-200kb.jpg" alt="Chicken Sizzling"></div><div class="name">Chicken Sizzling</div><div class="price">12,000 IQD</div></article>
 </div></section>
@@ -69,4 +82,65 @@ section{max-width:1150px;margin:auto;padding:42px 20px 8px}h2.section-title{text
 <article class="card"><div class="photo"><img src="strawberry mojito.jpg" alt="Strawberry Mojito"></div><div class="name">Strawberry Mojito</div><div class="price">7,500 IQD</div></article>
 <article class="card"><div class="photo"><img src="matcha-100kb.jpg" alt="Iced Strawberry Matcha"></div><div class="name">Iced Strawberry Matcha</div><div class="price soon">Price not listed</div></article>
 </div></section>
-</main><footer>Prices are in Iraqi Dinar (IQD).</footer></body></html>
+</main><footer>Prices are in Iraqi Dinar (IQD).</footer>
+<div class="photo-viewer" id="photoViewer" aria-hidden="true">
+  <div class="photo-viewer__panel" role="dialog" aria-modal="true" aria-labelledby="photoViewerCaption">
+    <button class="photo-viewer__close" type="button" aria-label="Close image">&times;</button>
+    <img class="photo-viewer__image" id="photoViewerImage" alt="">
+    <div class="photo-viewer__caption" id="photoViewerCaption"></div>
+    <div class="photo-viewer__price" id="photoViewerPrice"></div>
+  </div>
+</div>
+<script>
+(() => {
+  const viewer = document.getElementById('photoViewer');
+  const viewerImage = document.getElementById('photoViewerImage');
+  const caption = document.getElementById('photoViewerCaption');
+  const price = document.getElementById('photoViewerPrice');
+  const closeButton = viewer.querySelector('.photo-viewer__close');
+  let lastTrigger = null;
+
+  function openViewer(card) {
+    const image = card.querySelector('.photo img');
+    if (!image) return;
+    lastTrigger = card;
+    viewerImage.src = image.currentSrc || image.src;
+    viewerImage.alt = image.alt || '';
+    caption.textContent = card.querySelector('.name')?.textContent?.trim() || image.alt || '';
+    price.textContent = card.querySelector('.price')?.textContent?.trim() || '';
+    viewer.classList.add('open');
+    viewer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  }
+
+  function closeViewer() {
+    viewer.classList.remove('open');
+    viewer.setAttribute('aria-hidden', 'true');
+    viewerImage.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', 'View photo: ' + (card.querySelector('.name')?.textContent?.trim() || 'menu item'));
+    card.addEventListener('click', () => openViewer(card));
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openViewer(card);
+      }
+    });
+  });
+
+  closeButton.addEventListener('click', closeViewer);
+  viewer.addEventListener('click', event => {
+    if (event.target === viewer) closeViewer();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && viewer.classList.contains('open')) closeViewer();
+  });
+})();
+</script></body></html>
